@@ -1,8 +1,11 @@
-import com.sun.javaws.exceptions.InvalidArgumentException;
+package com.br.companyabc.healthylife.model;
+
+import com.br.companyabc.healthylife.exception.CafException;
+import com.br.companyabc.healthylife.exception.HighHeightException;
+import com.br.companyabc.healthylife.exception.HighWeightException;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Date;
 
 public class Client implements ClientInterface, AutoCloseable{
     private String name;
@@ -82,7 +85,7 @@ public class Client implements ClientInterface, AutoCloseable{
 
     /**
      * utilização de exceções unchecked (IllegalArgumentException)
-     * e exceções checked (HighWeightException) -> exceção customizada
+     * e exceções checked (com.br.companyabc.healthylife.exception.HighWeightException) -> exceção customizada
      * @throws HighWeightException
      */
     public void calculateImc() throws HighWeightException, HighHeightException {

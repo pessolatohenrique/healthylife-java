@@ -1,3 +1,9 @@
+package com.br.companyabc.healthylife.model;
+
+import com.br.companyabc.healthylife.exception.CafException;
+import com.br.companyabc.healthylife.exception.HighHeightException;
+import com.br.companyabc.healthylife.exception.HighWeightException;
+
 public class Man extends Client{
     public Man(String name, Double weight, Double height) {
         super(name, weight, height);

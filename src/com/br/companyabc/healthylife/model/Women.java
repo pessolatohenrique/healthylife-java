@@ -1,3 +1,9 @@
+package com.br.companyabc.healthylife.model;
+
+import com.br.companyabc.healthylife.exception.CafException;
+import com.br.companyabc.healthylife.exception.HighHeightException;
+import com.br.companyabc.healthylife.exception.HighWeightException;
+
 public class Women extends Client{
     public Women(String name, Double weight, Double height) {
         super(name, weight, height);
@@ -11,7 +17,7 @@ public class Women extends Client{
     }
 
     @Override
-    public void calculateCaf() throws CafException {
+    public void calculateCaf() throws CafException{
         super.calculateCaf();
 
         if (this.getActivityLevel() >= 5) {

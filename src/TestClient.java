@@ -1,3 +1,6 @@
+import com.br.companyabc.healthylife.model.Client;
+import com.br.companyabc.healthylife.model.Man;
+
 import java.time.LocalDate;
 
 class TestClient {
