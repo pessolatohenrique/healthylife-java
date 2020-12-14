@@ -10,6 +10,7 @@ class TestClient {
             LocalDate birthDate = LocalDate.of(1995, 5, 26);
             c.setActivityLevel(2);
             c.calculateImc();
+            //c.calculateImc(10.0);
             c.classifyImc();
             c.calculateAge(birthDate);
             c.calculateCaf();

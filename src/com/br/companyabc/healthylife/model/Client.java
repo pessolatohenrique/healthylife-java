@@ -93,6 +93,11 @@ public class Client implements ClientInterface, AutoCloseable{
         this.imc = this.weight / (this.height * this.height);
     }
 
+    public void calculateImc(Double imc) {
+        System.out.println("Sobrecarga de IMC: " + imc);
+        this.imc = imc;
+    }
+
     public void classifyImc() {
         if (this.imc < 16){
             this.imc_classification = "Desnutrição grau 3";
