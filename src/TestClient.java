@@ -16,6 +16,7 @@ class TestClient {
             c.calculateCaf();
             c.calculateEer();
             c.chooseDiet();
+            System.out.println("Objeto: " + c);
             System.out.println("Classificação de IMC: " + c.getImcClassification());
             System.out.println("Valor da Dieta: " + c.getDiet() + " KCAL");
         } catch (Exception ex) {

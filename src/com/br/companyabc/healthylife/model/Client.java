@@ -19,6 +19,12 @@ public class Client implements ClientInterface, AutoCloseable{
     private Double eer;
     private Integer diet;
 
+    /**
+     * Construtor para a classe Client
+     * @param name nome do cliente
+     * @param weight peso do cliente
+     * @param altura altura do cliente
+     */
     public Client(String name, Double weight, Double altura) {
         this.name = name;
         this.weight = weight;
@@ -65,6 +71,11 @@ public class Client implements ClientInterface, AutoCloseable{
         return diet;
     }
 
+    /**
+     * realiza a validação com base em possíveis exceções
+     * @throws HighWeightException exceção referente ao peso
+     * @throws HighHeightException exceção referente à altura
+     */
     public void validates() throws HighWeightException, HighHeightException {
         if (this.weight <= 0) {
             throw new IllegalArgumentException("O weight não pode ser menor do que 0");
@@ -84,20 +95,27 @@ public class Client implements ClientInterface, AutoCloseable{
     }
 
     /**
-     * utilização de exceções unchecked (IllegalArgumentException)
-     * e exceções checked (com.br.companyabc.healthylife.exception.HighWeightException) -> exceção customizada
-     * @throws HighWeightException
+     * realiza o cálculo do IMC com base na altura e peso
+     * @throws HighWeightException exceção referente ao peso
+     * @throws HighHeightException exceção referente à altura
      */
     public void calculateImc() throws HighWeightException, HighHeightException {
         this.validates();
         this.imc = this.weight / (this.height * this.height);
     }
 
+    /**
+     * exemplo de sobrecarga, com IMC já enviado por usuário
+     * @param imc IMC já enviado
+     */
     public void calculateImc(Double imc) {
         System.out.println("Sobrecarga de IMC: " + imc);
         this.imc = imc;
     }
 
+    /**
+     * classificação de grau do IMC
+     */
     public void classifyImc() {
         if (this.imc < 16){
             this.imc_classification = "Desnutrição grau 3";
@@ -118,6 +136,11 @@ public class Client implements ClientInterface, AutoCloseable{
         }
     }
 
+    /**
+     * cálculo da Estimativa de Energia Diária (EER)
+     * @throws HighWeightException exceção referente ao peso
+     * @throws HighHeightException exceção referente à altura
+     */
     @Override
     public void calculateEer() throws HighHeightException, HighWeightException {
         this.validates();
@@ -130,6 +153,10 @@ public class Client implements ClientInterface, AutoCloseable{
     public void calculateCaf() throws CafException {
     }
 
+    /**
+     * cálculo da idade com base na data atual
+     * @param birthDate data de aniversário do cliente
+     */
     public void calculateAge(LocalDate birthDate) {
         LocalDate currentDate = LocalDate.of(2020, 10, 26);
         if ((birthDate != null) && (currentDate != null)) {
@@ -139,6 +166,9 @@ public class Client implements ClientInterface, AutoCloseable{
         }
     }
 
+    /**
+     * seleção da dieta, com base no EER
+     */
     public void chooseDiet() {
         if (this.eer <= 1900) {
             this.diet = 1900;
@@ -147,5 +177,13 @@ public class Client implements ClientInterface, AutoCloseable{
         } else {
             this.diet = 2800;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

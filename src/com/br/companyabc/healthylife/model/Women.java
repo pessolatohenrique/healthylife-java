@@ -9,6 +9,11 @@ public class Women extends Client{
         super(name, weight, height);
     }
 
+    /**
+     * cálculo da Estimativa de Energia Diária (EER)
+     * @throws HighWeightException exceção referente ao peso
+     * @throws HighHeightException exceção referente à altura
+     */
     public void calculateEer() throws HighHeightException, HighWeightException {
         super.calculateEer();
 
@@ -16,6 +21,10 @@ public class Women extends Client{
         this.setEer(eer);
     }
 
+    /**
+     * Cálculo do Coeficiente de Atividade Física (CAF)
+     * @throws CafException tratamento de exceção para CAF
+     */
     @Override
     public void calculateCaf() throws CafException{
         super.calculateCaf();
@@ -30,5 +39,9 @@ public class Women extends Client{
             case 4: this.setCaf(1.45); break;
             default: this.setCaf(1.0); break;
         }
+    }
+
+    public String toString() {
+        return super.toString() + " (mulher)";
     }
 }
