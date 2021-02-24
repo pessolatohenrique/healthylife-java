@@ -16,12 +16,13 @@ class TestClient {
             c.calculateCaf();
             c.calculateEer();
             c.chooseDiet();
-            System.out.println("Objeto: " + c);
-            System.out.println("Classificação de IMC: " + c.getImcClassification());
-            System.out.println("Valor da Dieta: " + c.getDiet() + " KCAL");
+
+            System.out.println(c);
+            System.out.printf("Classificação de IMC: %s%n", c.getImcClassification());
+            System.out.printf("Valor da Dieta: %d KCAL%n", c.getDiet());
         } catch (Exception ex) {
-            System.out.println("Ocorreu uma exceção: " + ex.getMessage());
-            System.out.println("Classe de exceção: " + ex.getClass().getName());
+            System.out.printf("Ocorreu uma exceção: %s%n", ex.getMessage());
+            System.out.printf("Classe de exceção: %s%n",  ex.getClass().getName());
         }
 
         System.out.println("Fim do programa!");

@@ -24,11 +24,11 @@ public class TestClientArrayList {
             for (Client c : clientList) {
                 c.calculateImc();
                 c.classifyImc();
-                System.out.println(c + " -> " + c.getImcClassification());
+                System.out.printf("%s -> %s%n", c.getName(), c.getImcClassification());
             }
         } catch (Exception ex) {
-            System.out.println("Ocorreu uma exceção: " + ex.getMessage());
-            System.out.println("Classe de exceção: " + ex.getClass().getName());
+            System.out.printf("Ocorreu uma exceção: %s", ex.getMessage());
+            System.out.printf("Classe de exceção: %s", ex.getClass().getName());
         }
     }
 }

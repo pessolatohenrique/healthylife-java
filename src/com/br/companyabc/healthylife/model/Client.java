@@ -37,6 +37,8 @@ public class Client implements ClientInterface, AutoCloseable{
 
     public Integer getAge() { return this.age; }
 
+    public String getName() { return this.name; }
+
     public String getImcClassification() { return this.imc_classification; }
 
     public Integer getActivityLevel() {

@@ -18,6 +18,6 @@ public class TestClientArrayListLambda {
 
         clientList.sort((o1, o2) -> Double.compare(o2.getWeight(), o1.getWeight()));
 
-        clientList.forEach(item -> System.out.println(item + " -> " + item.getWeight()));
+        clientList.forEach(item -> System.out.printf("%s -> %.2f%n", item.getName(), item.getWeight()));
     }
 }
